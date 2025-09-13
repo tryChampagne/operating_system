@@ -1,3 +1,6 @@
+/*DESCRIPTION:
+    task: total number of process this program will create including parent
+*/
 #include<stdio.h>
 #include<sys/types.h>
 #include<sys/wait.h>
