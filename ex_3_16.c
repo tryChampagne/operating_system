@@ -1,4 +1,9 @@
-//ex 3.16 of chapter3
+/*DESCRIPTION:
+    even global variable/data_structures are not shared between parent and child process
+     untill explicit IPC mechanism set up (shared memory,message passing ,pipe etc.)
+     ,otherwise both parent and child processes will have copy of data.
+*/
+
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <stdio.h>

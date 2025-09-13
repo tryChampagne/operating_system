@@ -1,9 +1,11 @@
-//task: to run a application in child process address space
-//findings:
-//  1.we don't need to create a pipe or initializa shared memory region
-//    in order to pass command line agruments to child ,because are shared automatically.
-//  2.exit() function present in stdlib.h
+/*DESCRIPTION:
+    task: to run a application in child process address space
 
+    findings:
+        1.we don't need to create a pipe or initializa shared memory region
+        in order to pass command line agruments to child ,because are shared automatically.
+        2.exit() function present in stdlib.h
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

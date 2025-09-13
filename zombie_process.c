@@ -1,11 +1,18 @@
+/*DESCRIPTION:
+    task: creating a zombie process,by letting parent process to not call wait()
+
+    findings:
+        in order to list process use ps -l while our process(running program) is active in background
+        using & 
+            i.e ./a.out & ps -l
+*/
+
 #include<stdio.h>
 #include<sys/types.h>
 #include<sys/wait.h>
 #include<unistd.h>
 
-//in order to list process use ps -l while our process(running program) is active in background
-//using & 
-//i.e ./a.out & ps -l
+
 
 int main(){
     pid_t pid1;
@@ -33,7 +40,7 @@ int main(){
         printf("parent[%d]: rember me!\n",pid_parent);
         printf("look for my child with id: %d\n",pid1);        
         unsigned int time =10;
-        sleep(time);
+        
 
         printf("parent: i am about to terminate\n");
         return 0;

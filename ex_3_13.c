@@ -1,4 +1,6 @@
-//exercise question from textbook chapter 3(3.13)
+/*DESCRIPTION:
+    flow of execution and value return to parent by fork()
+*/
 
 #include <sys/types.h>
 #include <sys/wait.h>
