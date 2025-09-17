@@ -1,8 +1,9 @@
-//task: implement Collatz conjecture using child process.
+/*DESCRIPTION:
+    task: implement Collatz conjecture using child process.
 
-//findings:
-//  conjecture is something that seems to be true ,but not yet formally proven.
-
+    findings:
+    conjecture is something that seems to be true ,but not yet formally proven.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/wait.h>

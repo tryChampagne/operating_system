@@ -1,4 +1,6 @@
-//task: ipc using POSIX pipes,one way
+/*DESCRIPTION:
+    task: ipc using POSIX pipes,Half Duplex
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/wait.h>

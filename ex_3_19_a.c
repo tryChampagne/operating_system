@@ -1,13 +1,14 @@
-//task: calculate execution time of the application that we will run in child 
-//      address space.
+/*DESCRIPTION:
+    task: calculate execution time of the application that we will run in child 
+        address space.
 
-//ipc method used: shared memory
+    ipc method used: shared memory
 
-//findings:
-//      in genral:
-//          for related process use => unnamed semaphore,
-//          other wise named semaphore.
-
+    findings:
+        in genral:
+            for related process use => unnamed semaphore,
+            other wise named semaphore.
+*/
 #include <stdio.h>
 #include <sys/mman.h>
 #include <sys/time.h>
