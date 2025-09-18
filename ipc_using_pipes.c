@@ -5,32 +5,38 @@
 #include <stdlib.h>
 #include <sys/wait.h>
 #include <unistd.h>
+#include <string.h>
 
 int main(){
     int fd[2];//read and write ends.
 
-    char buffer[100];
-
     if(pipe(fd) < 0){
         perror("pipe failed\n");
-        exit(1);
+        exit(EXIT_FAILURE);
     }
 
     pid_t pid =fork();
     
     if(pid < 0){
         perror("fork failed\n");
-        exit(1);
+        exit(EXIT_FAILURE);
+
     }else if(pid == 0){
         printf("child[%d]: \n",getpid());
+        char buffer[100];
         //child process
         close(fd[1]);
 
         ssize_t byte_read =read(fd[0],buffer,sizeof(buffer));
         if(byte_read > 0){
             printf("child: message received => %s\n",buffer);
-            return 0;
+        }else{
+            perror("error occured when child tries to read.\n");
+            exit(EXIT_FAILURE);
         }
+
+        close(fd[0]);
+        exit(EXIT_SUCCESS);
 
     }else{
         //parent process
@@ -39,7 +45,7 @@ int main(){
         close(fd[0]);
 
         const char* message ="Hi from Parent";
-        write(fd[1],message,sizeof(message)+1);
+        write(fd[1],message,strlen(message)+1);
 
         wait(NULL);
 
