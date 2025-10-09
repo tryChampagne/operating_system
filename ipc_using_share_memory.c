@@ -19,7 +19,7 @@
 #include <semaphore.h>
 
 //define named constant here
-#define SHM_SIZE 1024
+// #define SHM_SIZE 1024
 
 //globla variables
 static int i =0;
